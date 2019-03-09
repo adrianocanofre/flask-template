@@ -1,0 +1,47 @@
+Try it out!
+---
+tags:
+  - Get using the endpoint "service"
+parameters:
+  - in: body
+    name: body
+    required: true
+    description: The task information, in JSON format.
+    schema:
+        id: Status
+        required:
+            - task_id
+            - tasks
+        properties:
+            task_id:
+                type: integer
+                description: The task_id.
+            tasks:
+                type: array
+                description: list of all tasks.
+                items:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            description: task id
+                        history:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    status:
+                                        type: string
+                                        description: task status
+                                    datetime_start:
+                                        type: string
+                                        description: start task
+                                    datetime_finish:
+                                        type: string
+                                        description: finish task
+
+responses:
+  201:
+    description: The success return.
+  504:
+    description: Error in MongoDB

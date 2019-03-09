@@ -1,0 +1,6 @@
+ENVIRONMENT=production
+LOG_PATH=/var/log/app/
+SERVICE_NAME=minimal-template
+DEPENDENCY_API_A_URL=http://localhost:1234
+DEPENDENCY_API_B_URL=http://localhost:1233
+GIT_TAG=0.0.1
