@@ -5,7 +5,6 @@ from config import config
 from .services import *
 import os
 from .dependencies_api import DependencyApi
-from ciplog import CipLog
 
 
 config_name = os.environ.get('ENVIRONMENT')
