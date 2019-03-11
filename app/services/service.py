@@ -1,7 +1,8 @@
+import requests
+import app
 from time import sleep
 from flask_restful import Resource
 from app.common import check_exceptions, ValidateInput
-import requests
 from app.common import POST_INPUT_SCHEMA
 from flasgger import swag_from
 
@@ -13,12 +14,14 @@ class ServiceApi(Resource):
     @swag_from('../../docs/post.yml')
     def get(self):
         data['tip'] = self.calculate_tip(100, 0.1)
+        app.log.info('Realizado um get.')
         return data, 200
 
     @check_exceptions
     @ValidateInput(POST_INPUT_SCHEMA)
     def post(self):
         response = requests.post('http://0.0.0.0:3000/api/remote', json={})
+        app.log.info('Realizado um POST.')
         return {}, response.status_code
 
     def calculate_tip(self, bill_price, tip_percent):
@@ -31,4 +34,5 @@ class ServiceApi(Resource):
             sleep(1)
 
     def put(self):
+        app.log.info('Realizado um PUT.')
         return {}, 200

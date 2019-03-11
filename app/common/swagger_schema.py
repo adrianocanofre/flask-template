@@ -1,5 +1,5 @@
 SPECS_DICT = {
-  "tags": "globo",
+  "tags": "teste",
   "parameters": [
     {
       "name": "palette",

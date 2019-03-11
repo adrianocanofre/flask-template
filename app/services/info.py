@@ -8,7 +8,7 @@ class InfoApi(Resource):
 
     def get(self):
         version = last_commit() if app.config_name != 'production' else last_tag()
-
+        app.log.info('realizado um get no info')
         return {
                    "version": version,
                    "commit_datetime": last_commit_datetime(),

@@ -45,16 +45,16 @@ $ python app.py
 Build With Docker without env-file
 ```
 $ docker build -t <Project-name> .
-$ docker run -d -p 80:8000 <Project-name>
+$ docker run -d -p 5000:80 <Project-name>
 ```
 Build With Docker with an env-file (you can build with staging, dev or production)
 ```
 $ docker build -t flask-template  .
-$ docker run -d -p 80:8000 <Project-name>
+$ docker run -d -p 5000:80 <Project-name>
 ```
 Run docker using env file if you don't specified it in build definition
 ```
-$ docker run -d -p 8000:80 --env-file path/your/file <Project-name>
+$ docker run -d -p 5000:80 --env-file path/your/file <Project-name>
 ```
 
 **ATTENTION**  

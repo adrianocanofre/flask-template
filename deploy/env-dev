@@ -1,6 +1,5 @@
 ENVIRONMENT=development
-LOG_PATH=/var/log/app/
-SERVICE_NAME=minimal-template
+SERVICE_NAME=flask-template
 DEPENDENCY_API_A_URL=http://localhost:1234
 DEPENDENCY_API_B_URL=http://localhost:1233
 GIT_TAG=1.0.0

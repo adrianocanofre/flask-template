@@ -2,8 +2,6 @@ FROM alpine
 
 COPY requirements.txt /tmp/requirements.txt
 
-ENV FILEBEAT_VERSION=6.1.1
-
 RUN apk add --no-cache \
     libc6-compat \
     python3 \
@@ -25,14 +23,10 @@ RUN apk add --no-cache \
 RUN apk add -U tzdata
 RUN cp /usr/share/zoneinfo/Brazil/East /etc/localtime
 RUN mkdir -p /var/log/app/
-RUN chmod 777 -R /var/log/app/
 
 COPY conf/nginx.conf /etc/nginx/
-
 COPY conf/flask-site-nginx.conf /etc/nginx/conf.d/
-
 COPY conf/uwsgi.ini /etc/uwsgi/
-
 COPY conf/supervisord.conf /etc/supervisord.conf
 
 COPY . /app
