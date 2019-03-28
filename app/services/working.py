@@ -8,15 +8,6 @@ class WorkApi(Resource):
     def get(self):
 
         work_list = []
-
-        #if app.dependency_api.healthcheck():
-        #    work_list.append(build_working_response('dependency-api', 'working'))
-        #    app.log.info('testing info log')
-        #else:
-        #    work_list.append(build_working_response('dependency-api', 'error',
-        #                                            'dependency-api offline.', 'CODE01'))
-        #    app.log.info('testing ERROR log')
-
         if requests.get('http://www.google.com'):
             work_list.append(build_working_response('google', 'working'))
             app.log.info('testing info log')

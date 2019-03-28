@@ -1,5 +1,0 @@
-ENVIRONMENT=development
-SERVICE_NAME=flask-template
-DEPENDENCY_API_A_URL=http://localhost:1234
-DEPENDENCY_API_B_URL=http://localhost:1233
-GIT_TAG=1.0.0

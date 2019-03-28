@@ -1,0 +1,2 @@
+ENVIRONMENT=production
+SERVICE_NAME=flask-template
