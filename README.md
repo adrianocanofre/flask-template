@@ -1,6 +1,6 @@
-# Minimal Template
+# Flask Template
 
-Basic template for projects  
+This project contains a basic template for using em microservices, apis and other project. This is a RESTFUL service and responds in json.  
 
 ## Getting Started
 
