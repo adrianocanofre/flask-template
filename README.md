@@ -1,6 +1,6 @@
 # Flask Template
 
-This project contains a basic template for using em microservices, apis and other project. This is a RESTFUL service and responds in json.  
+This project contains a basic template for using em microservices, apis and other project. This is a RESTFUL service and response in json.  
 
 ## Getting Started
 
@@ -51,7 +51,7 @@ Basic run:
 $ python app.py
 ```
 
-Build With Docker without env-file
+Build With Docker  
 ```
 $ docker build -t <Project-name> .
 $ docker run -d -p 5000:80 --env-file=/path/file <Project-name>
