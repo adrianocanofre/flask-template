@@ -6,15 +6,15 @@ This project contains a basic template for using em microservices, apis and othe
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
-#### Linux/Mac OS
+##### Linux/Mac OS
 ```
 virtualenv
 python 3.6
 ```
 
-### Installing
+##### Installing
 
 ```
 $ cd flask-template
@@ -23,18 +23,26 @@ $ source venv/bin/activate
 $ pip  install -r requirements.txt
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+## Configure
 
-### Configure
-
-Change the value of the variable `SERVICE_NAME` to the name of the new service:  
+You need to add some variable  to run the project.
 
 ```
-ENVIRONMENT=production
-LOG_PATH=/var/log/app/
-SERVICE_NAME=flask-template
+ENVIRONMENT=NAMEENVIRONMENT
+SERVICE_NAME=YOURSERVICENAME
+```  
+Variables that you can use:  
+
+[config.py](config.py)  
 ```
+'development': DevelopmentConfig,
+'testing': TestingConfig,
+'production': ProductionConfig,
+'default': DevelopmentConfig
+```  
+
 ## Running the application
+
 
 Basic run:
 
@@ -70,3 +78,7 @@ You have to change the ports and edit the file config.py.
 * x.x.x(open version)
   * Install git in gitlab-ci and dockerfile
   * Add endpoint /info
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
