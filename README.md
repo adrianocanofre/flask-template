@@ -45,7 +45,6 @@ config = {
 
 ## Running the application
 
-
 Basic run:
 
 ```
@@ -55,31 +54,18 @@ $ python app.py
 Build With Docker without env-file
 ```
 $ docker build -t <Project-name> .
-$ docker run -d -p 5000:80 <Project-name>
+$ docker run -d -p 5000:80 --env-file=/path/file <Project-name>
 ```
-Build With Docker with an env-file (you can build with staging, dev or production)
-```
-$ docker build -t flask-template  .
-$ docker run -d -p 5000:80 <Project-name>
-```
-Run docker using env file if you don't specified it in build definition
-```
-$ docker run -d -p 5000:80 --env-file path/your/file <Project-name>
-```
-
-**ATTENTION**  
-You have to change the ports and edit the file config.py.
-
 
 ## Built With
 
-* [Flask](http://flask.pocoo.org/) - The web framework used
-
+* [Flask](http://flask.pocoo.org/)  
+* [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/)  
+* [Flasgger](https://github.com/rochacbruno/flasgger)
 
 ## Release History  
-* x.x.x(open version)
-  * Install git in gitlab-ci and dockerfile
-  * Add endpoint /info
+**0.0.1**  
+* Initial version(beta)
 
 ## License
 
