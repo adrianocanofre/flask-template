@@ -35,10 +35,12 @@ Variables that you can use:
 
 [config.py](config.py)  
 ```
-'development': DevelopmentConfig,
-'testing': TestingConfig,
-'production': ProductionConfig,
-'default': DevelopmentConfig
+config = {
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
+}
 ```  
 
 ## Running the application
