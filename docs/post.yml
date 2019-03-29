@@ -10,38 +10,23 @@ parameters:
     schema:
         id: Status
         required:
-            - task_id
-            - tasks
+            - id
+            - property1
+            - property2
         properties:
-            task_id:
+            id:
                 type: integer
-                description: The task_id.
-            tasks:
-                type: array
-                description: list of all tasks.
-                items:
-                    type: object
-                    properties:
-                        id:
-                            type: integer
-                            description: task id
-                        history:
-                            type: array
-                            items:
-                                type: object
-                                properties:
-                                    status:
-                                        type: string
-                                        description: task status
-                                    datetime_start:
-                                        type: string
-                                        description: start task
-                                    datetime_finish:
-                                        type: string
-                                        description: finish task
+                description: ID
+            property1:
+                type: string
+                description: Value 1
+            property2:
+                type: string
+                description: Value2
+
 
 responses:
   201:
     description: The success return.
   504:
-    description: Error in MongoDB
+    description: Error in Service

@@ -1,6 +1,6 @@
 import app
 from flask_restful import Resource
-from app.common import check_exceptions, last_tag, last_commit, last_commit_datetime, log_request
+from app.common import check_exceptions, last_tag, last_commit, last_commit_datetime
 from datetime import datetime
 
 
