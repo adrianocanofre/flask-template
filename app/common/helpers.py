@@ -16,9 +16,12 @@ class ValidateInput(object):
                     raise ValidationError('No json provided.')
                 validate(request.json, json.loads(self.json_schema))
             except ValidationError as ex:
-                raise InvalidInputError('URL: ' + request.full_path
-                                        + ' - BODY: ' + request.data.decode("utf-8") + ''
-                                        + ' - ERROR: ' + str(ex))
+                app.log.error("json error. The json body is invalid.")
+                return {"error": {
+                            "error_code": "EX020C",
+                            "error_description": "The json body is invalid."
+                            }
+                        }, 500
             return original_func(*args, **kwargs)
 
         return wrappee
@@ -73,15 +76,15 @@ def build_working_response(service, status, error_description='', error_code='')
     }
 
 
-def log_request(f):
-    def wrapper(*args, **kwargs):
-        message = "Method: " + str(request.method) + " endpoint: " + request.full_path + " body: "
-        if request.data:
-            message += str(request.data)
-
-        response = f(*args, **kwargs)
-        return response
-    return wrapper
+# def log_request(f):
+#     def wrapper(*args, **kwargs):
+#         message = "Method: " + str(request.method) + " endpoint: " + request.full_path + " body: "
+#         if request.data:
+#             message += str(request.data)
+#
+#         response = f(*args, **kwargs)
+#         return response
+#     return wrapper
 
 
 def last_commit():
