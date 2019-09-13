@@ -1,5 +1,8 @@
 # Flask Template
 
+[![GitHub license](https://img.shields.io/github/license/adrianocanofre/flask-template)](https://github.com/adrianocanofre/flask-template/blob/master/LICENSE)
+![](https://img.shields.io/github/last-commit/adrianocanofre/flask-template)  
+
 This project contains a basic template for using em microservices, apis and other project. This is a RESTFUL service and response in json.  
 
 ## Getting Started
@@ -11,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 ##### Linux/Mac OS
 ```
 virtualenv
-python 3.6
+python 3
 ```
 
 ##### Installing
