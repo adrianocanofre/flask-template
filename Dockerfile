@@ -6,7 +6,6 @@ RUN apk add --no-cache --virtual .build-deps \
     libc6-compat=1.1.22-r3 \
     alpine-sdk=1.0-r0 \
     linux-headers=4.19.36-r0 \
-    openssl-dev=1.1.1c-r0 \
     libffi-dev=3.2.1-r6 \
     python3=3.7.3-r0 \
     python3-dev=3.7.3-r0 \
