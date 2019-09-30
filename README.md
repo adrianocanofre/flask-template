@@ -2,6 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/adrianocanofre/flask-template)](https://github.com/adrianocanofre/flask-template/blob/master/LICENSE)
 ![](https://img.shields.io/github/last-commit/adrianocanofre/flask-template)  
+[![Build Status](https://travis-ci.org/adrianocanofre/flask-template.svg?branch=master)](https://travis-ci.org/adrianocanofre/flask-template)  
 
 This project contains a basic template for using em microservices, apis and other project. This is a RESTFUL service and response in json.  
 
