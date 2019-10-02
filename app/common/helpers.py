@@ -1,6 +1,7 @@
 import json
 from flask import request
 from jsonschema import validate, ValidationError
+from hamcrest import *
 import subprocess
 import app
 
@@ -106,5 +107,9 @@ def last_commit_datetime():
         return "0.0.0"
 
 def last_tag():
-    """Return last tag"""
-    return app.app.config['GIT_TAG']
+    """Return last commit and your date"""
+    try:
+        return subprocess.check_output(['git', 'log', '-1', '--pretty=format:"%cd"'],
+                                   universal_newlines=False).decode("utf-8").replace('\"', '')
+    except:
+        return "0.0.0"

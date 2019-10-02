@@ -13,7 +13,12 @@ config_name = os.environ.get('ENVIRONMENT')
 app = Flask(__name__)
 app.config.from_object(config[config_name])
 
-logging.config.dictConfig(yaml.load(open('conf/logging.conf')))
+if app.config['ENV'] != 'production':
+    print(app.config)
+    logging.config.dictConfig(yaml.load(open('conf/logging_dev.conf')))
+else:
+    logging.config.dictConfig(yaml.load(open('conf/logging.conf')))
+
 log = logging.getLogger(__name__)
 
 api = Api(app, prefix="/api")

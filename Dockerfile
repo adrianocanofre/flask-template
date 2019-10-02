@@ -24,7 +24,7 @@ RUN apk add --no-cache --virtual .build-deps \
 RUN apk add -U tzdata
 RUN cp /usr/share/zoneinfo/Brazil/East /etc/localtime
 RUN mkdir -p /app/log
-RUN chmod 777 -R /app/log
+RUN chmod 660 -R /var/log/app
 
 COPY conf/nginx.conf /etc/nginx/
 COPY conf/flask-site-nginx.conf /etc/nginx/conf.d/
