@@ -5,6 +5,8 @@ from app.common import build_working_response
 
 class WorkApi(Resource):
 
+    endpoint = 'working'
+
     def get(self):
 
         work_list = []
