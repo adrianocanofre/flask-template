@@ -6,15 +6,14 @@ from app.common import check_exceptions, ValidateInput
 from app.common import POST_INPUT_SCHEMA
 from flasgger import swag_from
 
-data = {"table_id": 123, "bill_price": 50.00}
 
 class ServiceApi(Resource):
+    data = {"table_id": 123, "bill_price": 50.00, "valor" : "valor1"}
 
     @swag_from('../../docs/post.yml')
     def get(self):
-        data['valor'] = 'valor1'
         app.log.info('Realizado um get.')
-        return data, 200
+        return self.data, 200
 
     @check_exceptions
     @ValidateInput(POST_INPUT_SCHEMA)
