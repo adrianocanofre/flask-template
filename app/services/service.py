@@ -8,6 +8,7 @@ from flasgger import swag_from
 
 
 class ServiceApi(Resource):
+    endpoint = 'service'
     data = {"table_id": 123, "bill_price": 50.00, "valor" : "valor1"}
 
     @swag_from('../../docs/post.yml')

@@ -40,6 +40,6 @@ swagger = Swagger(app)
 #/api/v1/endpoint/
 for version in versions:
     version_name = version.__name__.split('.')[-1]
-    for service in version.get_services():
-        api.add_resource(service['api'], '/%s/%s' % (version_name, service['endpoint']))
+    for service in version.services:
+        api.add_resource(service, '/%s/%s' % (version_name, service.endpoint))
 

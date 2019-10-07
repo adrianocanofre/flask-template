@@ -6,6 +6,8 @@ from datetime import datetime
 
 class InfoApi(Resource):
 
+    endpoint = 'info'
+
     def get(self):
         version = self.get_service_version()
         app.log.info('realizado um get no info')
