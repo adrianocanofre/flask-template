@@ -1,6 +1,6 @@
 from behave import *
 from mock import MagicMock
-from app.services import InfoApi
+from app.services.info import InfoApi
 from app.common import last_tag
 
 

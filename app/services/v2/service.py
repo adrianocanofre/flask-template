@@ -8,9 +8,8 @@ from app.common import POST_INPUT_SCHEMA
 from flasgger import swag_from
 
 class ServiceApiV2(ServiceApi):
-    
+
     @swag_from('../../docs/post.yml')
     def get(self):
         self.data['valor'] = ['valor2']
         return super(ServiceApiV2, self).get()
-

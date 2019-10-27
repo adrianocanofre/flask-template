@@ -1,7 +1,7 @@
 Feature: Info service feature
 
   Scenario Outline: Method not Allowed
-    When <method> request to api/info is made
+    When <method> request to api/v2/info is made
     Then should return status code 405 METHOD NOT ALLOWED
 
       Examples: Methods
@@ -13,7 +13,7 @@ Feature: Info service feature
   Scenario: api info
     Given I mock server datetime to 2019-02-26 10:04:21
     Given I mock service version to 0.0.0
-    When get request to api/info is made
+    When get request to api/v2/info is made
     Then should return status code 200 OK
     Then should have response body
     """
