@@ -13,6 +13,8 @@ config_name = os.environ.get('ENVIRONMENT')
 app = Flask(__name__)
 app.config.from_object(config[config_name])
 
+LOG = app.config['LOG_PATH']
+
 if app.config['ENV'] != 'production':
     logging.config.dictConfig(yaml.load(open('conf/logging_dev.conf')))
 else:
@@ -27,11 +29,10 @@ swagger = Swagger(app)
 #[app.services.v1, app.services.v2, ...]
 #For each one of these, the __name__() method returns this string, so we get the name by splitting this by '.' and taking the last substring
 #Each version needs to define a services list which returns a list of all the APIs to be registered.
-#In order for these apis to have their endpoints added, they need to define an `endpoint` variable. For instance, `ServiceApiv3.endpoint` returns 'service'. 
-#If these classes inherit the base classes in services/*.py, then this is already handled. 
+#In order for these apis to have their endpoints added, they need to define an `endpoint` variable. For instance, `ServiceApiv3.endpoint` returns 'service'.
+#If these classes inherit the base classes in services/*.py, then this is already handled.
 
 for version in versions:
     version_name = version.__name__.split('.')[-1]
     for service in version.services:
         api.add_resource(service, '/%s/%s' % (version_name, service.endpoint))
-

@@ -175,3 +175,6 @@ venv.bak/
 exports.sh
 
 # End of https://www.gitignore.io/api/python,pycharm
+
+
+*.log

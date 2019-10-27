@@ -23,8 +23,7 @@ RUN pip3 install --upgrade pip==19.2.3 setuptools==41.4.0 && \
     rm /etc/nginx/conf.d/default.conf && \
     rm -r /root/.cache
 
-RUN cp /usr/share/zoneinfo/Brazil/East /etc/localtime
-RUN install -o "$(whoami)" -m 660 -d /var/log/app
+RUN install -o "$(whoami)" -m 660 -d log/
 
 COPY conf/nginx.conf /etc/nginx/
 COPY conf/flask-site-nginx.conf /etc/nginx/conf.d/
