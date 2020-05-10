@@ -13,16 +13,13 @@ class ServiceApi(Resource):
 
     @swag_from('../../docs/post.yml')
     def get(self):
-        app.log.info('Realizado um get.')
         return self.data, 200
 
     @check_exceptions
     @ValidateInput(POST_INPUT_SCHEMA)
     def post(self):
         response = request.json
-        app.log.info('Realizado um POST.')
         return {}
 
     def put(self):
-        app.log.info('Realizado um PUT.')
         return {}

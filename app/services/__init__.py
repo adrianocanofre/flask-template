@@ -1,5 +1,8 @@
-#Imports all version subdirectories. 
 
+from .service import ServiceApi
+from .healthcheck import HealthApi
+from .working import WorkApi
+from .info import InfoApi
 import os, importlib, re
 from os.path import dirname, basename, isfile, join
 import glob
@@ -16,4 +19,3 @@ version_dir_regex = re.compile('v\d+')
 
 #Import said directories
 versions = [importlib.import_module('app.services.%s' % mod) for mod in modules if version_dir_regex.match(mod)]
-

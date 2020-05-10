@@ -17,7 +17,6 @@ class ValidateInput(object):
                     raise ValidationError('No json provided.')
                 validate(request.json, json.loads(self.json_schema))
             except ValidationError as ex:
-                app.log.error("json error. The json body is invalid.")
                 return {"error": {
                             "error_code": "EX020C",
                             "error_description": "The json body is invalid."

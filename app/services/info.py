@@ -10,7 +10,6 @@ class InfoApi(Resource):
 
     def get(self):
         version = self.get_service_version()
-        app.log.info('realizado um get no info')
         return {
                    "version": version,
                    "server_datetime": self.get_server_datetime()
