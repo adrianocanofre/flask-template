@@ -5,10 +5,6 @@ language: python
 services:
   - docker
 
-env:
-  global:
-    PROJECT_NAME=`echo $TRAVIS_REPO_SLUG | cut -d'/' -f2'`
-
 before_install:
   - pip install -U pip
   - pip install awscli
@@ -20,6 +16,8 @@ script:
   - echo "no tests!" # put your normal testing scripts here
 
 after_success:
+  env:
+    PROJECT_NAME=`echo $TRAVIS_REPO_SLUG | cut -d'/' -f2'`
   - docker --version  # document the version travis is using
   - export PATH=$PATH:$HOME/.local/bin # put aws in the path
   - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com
